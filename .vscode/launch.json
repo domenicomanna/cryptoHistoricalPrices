@@ -10,9 +10,10 @@
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/src/index.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
+      "runtimeVersion": "16.13.0",
+      "preLaunchTask": "npm: build",
       "outFiles": ["${workspaceFolder}/**/*.js"],
-      "args": ["BTC", "2021-11-14T18:48"]
+      "args": ["BTC", "2021-12-21T01:06"]
     }
   ]
 }
