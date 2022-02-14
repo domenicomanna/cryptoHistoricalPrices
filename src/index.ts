@@ -15,22 +15,19 @@ export type Args = {
 };
 
 const main = async (args: Args) => {
-    try {
-        const request: GetPricesRequest = {
-            targetCurrency: args.currency,
-            coinSymbol: args.coinSymbol,
-            onOrBefore: args.date,
-            limit: 1,
-            exchange: args.exchange,
-        };
+    const request: GetPricesRequest = {
+        targetCurrency: args.currency,
+        coinSymbol: args.coinSymbol,
+        onOrBefore: args.date,
+        limit: 1,
 
-        const response: GetPricesResponse = await cryptoCompareApi.getPrices(request);
-        const priceDisplayInformation = getPriceDisplayInformation(args, response);
+        exchange: args.exchange,
+    };
 
-        console.log('Price information: ', priceDisplayInformation);
-    } catch (error) {
-        console.error(error);
-    }
+    const response: GetPricesResponse = await cryptoCompareApi.getPrices(request);
+    const priceDisplayInformation = getPriceDisplayInformation(args, response);
+
+    console.log('Price information: ', priceDisplayInformation);
 };
 
 const getArguments = (): Args => {
